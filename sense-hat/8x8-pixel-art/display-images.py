@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 import os
 import time
-#from sense_hat import SenseHat
+from sense_hat import SenseHat
 
 def find_non_black_bbox(image, threshold=12):
     """
@@ -21,9 +21,9 @@ def find_non_black_bbox(image, threshold=12):
 
 def display_image(image, delay=1):
     print(f"Displaying {image}")
-    #sense = SenseHat()
-    #sense.load_image(image)
-    #time.sleep(delay)
+    sense = SenseHat()
+    sense.load_image(image)
+    time.sleep(delay)
 
 def extract_tiles(image_path, tile_size, border_size=10, threshold=5):
     """
