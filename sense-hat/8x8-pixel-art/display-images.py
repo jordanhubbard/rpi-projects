@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 import os
 import time
-from sense_hat import SenseHat
+#from sense_hat import SenseHat
 
 def find_non_black_bbox(image, threshold=12):
     """
@@ -21,9 +21,9 @@ def find_non_black_bbox(image, threshold=12):
 
 def display_image(image, delay=1):
     print(f"Displaying {image}")
-    sense = SenseHat()
-    sense.load_image(image)
-    time.sleep(delay)
+    #sense = SenseHat()
+    #sense.load_image(image)
+    #time.sleep(delay)
 
 def extract_tiles(image_path, tile_size, border_size=10, threshold=5):
     """
@@ -61,10 +61,10 @@ def extract_tiles(image_path, tile_size, border_size=10, threshold=5):
                 # Crop the tile to remove the black borders
                 cropped_tile = section.crop(bbox)
                 scaled = cropped_tile.resize((8, 8), Image.LANCZOS)
-                # Save the cropped tile
+                # Save the cropped and scaled tile
                 output_filename = f"{output_dir}/tile_{tile_counter}.png"
                 scaled.save(output_filename)
-                display_image(output_filename)
+                #display_image(output_filename)
                 tile_counter += 1
 
 extract_tiles("image-files/8x8characters.png", tile_size=64, border_size=8)
