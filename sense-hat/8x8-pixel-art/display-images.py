@@ -64,7 +64,7 @@ def extract_tiles(image_path, tile_size, border_size=10, threshold=5):
                 # Save the cropped and scaled tile
                 output_filename = f"{output_dir}/tile_{tile_counter}.png"
                 scaled.save(output_filename)
-                #display_image(output_filename)
+                display_image(output_filename)
                 tile_counter += 1
 
 extract_tiles("image-files/8x8characters.png", tile_size=64, border_size=8)
