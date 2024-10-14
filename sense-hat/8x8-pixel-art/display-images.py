@@ -4,7 +4,7 @@ import os
 import time
 from sense_hat import SenseHat
 
-def find_non_black_bbox(image, threshold=5):
+def find_non_black_bbox(image, threshold=12):
     """
     Finds the bounding box (left, top, right, bottom) of non-black content within an image section.
     """
@@ -60,10 +60,10 @@ def extract_tiles(image_path, tile_size, border_size=10, threshold=5):
             if bbox:
                 # Crop the tile to remove the black borders
                 cropped_tile = section.crop(bbox)
-
+                scaled = cropped_tile.resize((8, 8), Image.LANCZOS)
                 # Save the cropped tile
                 output_filename = f"{output_dir}/tile_{tile_counter}.png"
-                cropped_tile.save(output_filename)
+                scaled.save(output_filename)
                 display_image(output_filename)
                 tile_counter += 1
 
