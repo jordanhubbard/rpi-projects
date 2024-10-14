@@ -67,4 +67,4 @@ def extract_tiles(image_path, tile_size, border_size=10, threshold=5):
                 display_image(output_filename)
                 tile_counter += 1
 
-extract_tiles("image-files/NES.jpeg", tile_size=64, border_size=8)
+extract_tiles("image-files/NES.jpeg", tile_size=90, border_size=4)
