@@ -1,22 +1,17 @@
 from sense_hat import SenseHat
 import time
+from colors import Colors
 
 s = SenseHat()
 s.low_light = True
-
-green = (0, 255, 0)
-yellow = (255, 255, 0)
-blue = (0, 0, 255)
-red = (255, 0, 0)
-white = (255,255,255)
-nothing = (0,0,0)
-pink = (255,105, 180)
+c = Colors()
 
 def trinket_logo():
-    G = green
-    Y = yellow
-    B = blue
-    O = nothing
+    G = c.get_rgb("green")
+    Y = c.get_rgb("yellow")
+    B = c.get_rgb("blue")
+    O = c.get_rgb("black")
+
     logo = [
     O, O, O, O, O, O, O, O,
     O, Y, Y, Y, B, G, O, O,
@@ -30,9 +25,9 @@ def trinket_logo():
     return logo
 
 def raspi_logo():
-    G = green
-    R = red
-    O = nothing
+    G = c.get_rgb("green")
+    R = c.get_rgb("red")
+    O = c.get_rgb("black")
     logo = [
     O, G, G, O, O, G, G, O, 
     O, O, G, G, G, G, O, O,
@@ -46,8 +41,8 @@ def raspi_logo():
     return logo
 
 def plus():
-    W = white
-    O = nothing
+    W = c.get_rgb("white")
+    O = c.get_rgb("black")
     logo = [
     O, O, O, O, O, O, O, O, 
     O, O, O, W, W, O, O, O,
@@ -61,8 +56,8 @@ def plus():
     return logo
 
 def equals():
-    W = white
-    O = nothing
+    W = c.get_rgb("white")
+    O = c.get_rgb("black")
     logo = [
     O, O, O, O, O, O, O, O, 
     O, W, W, W, W, W, W, O,
@@ -76,8 +71,8 @@ def equals():
     return logo
 
 def heart():
-    P = pink
-    O = nothing
+    P = c.get_rgb("pink")
+    O = c.get_rgb("black")
     logo = [
     O, O, O, O, O, O, O, O,
     O, P, P, O, P, P, O, O,
