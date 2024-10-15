@@ -1,15 +1,11 @@
 from sense_hat import SenseHat
+from colors import Colors
 
 sense = SenseHat()
+c = Colors()
 
-red = [255, 0, 0]
-blue = [0, 0, 255]
-green = [0, 255, 0]
-black = [0, 0, 0]
-white = [255, 255, 255]
-
-X = red
-O = white
+X = c.get_rgb("red")
+O = c.get_rgb("white")
 
 question_mark = [
 O, O, O, X, X, O, O, O,
