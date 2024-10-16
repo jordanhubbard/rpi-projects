@@ -1,3 +1,5 @@
+import random
+
 class Colors:
     # A dictionary to store some common colors with their RGB values
     colors = {
@@ -23,4 +25,8 @@ class Colors:
             return self.colors[color_name]
         else:
             raise ValueError(f"Color '{color_name}' not found. Please use a valid color name.")
+
+
+    def random_rgb(self):
+        return random.choice(list(self.colors.values()))
 
