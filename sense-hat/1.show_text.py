@@ -1,6 +1,8 @@
 from sense_hat import SenseHat
 from colors import Colors
+import random
 
 sense = SenseHat()
 c = Colors()
-sense.show_message("I love the Astro Pi!", text_colour=c.get_rgb("yellow"), back_colour=c.get_rgb("blue"))
+while True:
+    sense.show_message("I love Lamp!", text_colour=c.random_rgb(), back_colour=c.random_rgb(), scroll_speed=random.uniform(0.01, 0.10))
