@@ -30,3 +30,4 @@ while i < 5:
         sense.set_rotation(rot)
         time.sleep(0.5)
     i += 1
+    sense.set_rotation(0)
